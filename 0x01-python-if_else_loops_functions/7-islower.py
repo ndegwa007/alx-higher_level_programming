@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def islower(c):
     # loop c
     for i in c:
