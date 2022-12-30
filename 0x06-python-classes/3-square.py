@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ a class raising errors and gets the area of square"""
+
+
 class Square:
 
     """ a square class that defines a square """
