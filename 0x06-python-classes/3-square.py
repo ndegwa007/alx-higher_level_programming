@@ -5,7 +5,7 @@
 class Square:
 
     """ a square class that defines a square """
-    def __init__(self, size):
+    def __init__(self, size=0):
         """
         initialize obj in Square
         Args:
