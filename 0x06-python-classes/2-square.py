@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" a class that raises errors """
 class Square:
     """
     a Square class that defines a square
