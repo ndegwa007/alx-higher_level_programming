@@ -1,9 +1,6 @@
 #!/usr/bin/python3
+"""module: load from json file"""
 import json
-"""
-a module with a function
-the functionn returns JSON representation of an obj(str)
-"""
 
 
 def to_json_string(myobj):
