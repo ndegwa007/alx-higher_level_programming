@@ -15,6 +15,32 @@ with no arguments.
     >>> bg = BaseGeometry()
     >>> type(bg)
     <class '7-base_geometry.BaseGeometry'>
+    >>> bg.integer_validator()
+    ValueError: 2 arguments required
+    >>> bg.integer_validator("age")
+    ValuError: 2 arguments required
+    >>> bg.area()
+    Traceback (most recent call last)
+    ....
+    Exception: area() is not implemented
+    >>> bg.integer_validator("age", 1)
+    1
+    >>> bg.integer_validator("age", 0)
+    ValueError: age must be greater than 0
+    >>> bg.integer_validator("age", -4)
+    ValueError: age must be greater than 0
+    >>> bg.integer_validator("age", [4])
+    TypeError: age must be an integer
+    >>> bg.integer_validator("age", {3, 5})
+    TypeError: age must be an integer
+    >>> bg.integer_validator("age", True)
+    TypeError: age must be an integer
+    >>> bg.integer_validator("age", None)
+    ValueError: age must be greater than 0
+    >>> bg.integer_validator("age", "6")
+    TypeError: age must be an integer
+
+
 
 ::
 
@@ -23,3 +49,5 @@ with no arguments.
 
 In fact, any arguments supplied to an instantiation of ``BaseGeometry`` results
 in a TypeError.
+
+"""
