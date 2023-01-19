@@ -15,7 +15,7 @@ class Test_Rectangle_basics(TestCase):
     def test_empty(self):
         with self.assertRaises(TypeError):
             Rectangle()
-    
+
     def test_one_arg_missing(self):
         with self.assertRaises(TypeError):
             Rectangle(1)
@@ -39,7 +39,7 @@ class Test_Rectangle_basics(TestCase):
     def test_Rectangle_with_id(self):
         self.assertEqual(Rectangle(2, 3, 4, 5, 6).id, 6)
         self.assertEqual(Rectangle(1, 3, 4, 6, 7).id, 7)
-    
+
     def test_width_get_set(self):
         r = Rectangle(2, 4, 1, 3)
         with self.assertRaises(AttributeError):
@@ -71,3 +71,9 @@ class Test_Rectangle_basics(TestCase):
         self.assertEqual(r.y, 7)
         r.y = 2
         self.assertEqual(r.y, 2)
+
+    def test_area(self):
+	    r = Rectangle(3, 2)
+	    self.assertEqual(r.area(), 6)
+	    r.height = 5
+	    self.assertEqual(r.area(), 15)
