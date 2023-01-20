@@ -91,8 +91,11 @@ class Rectangle(Base):
 
     def display(self):
         """ prints instance of rectangle with character # """
+        rectangle = self.y * "\n"
         for i in range(self.height):
-            print(self.width * "#")
+            rectangle += (" " * self.width)
+            rectangle += ("#" * self.width + "\n")
+        print(rectangle, end="")
 
     def __str__(self):
         """ formats the std:out """
