@@ -93,7 +93,7 @@ class Rectangle(Base):
         """ prints instance of rectangle with character # """
         rectangle = self.y * "\n"
         for i in range(self.height):
-            rectangle += (" " * self.width)
+            rectangle += (" " * self.x)
             rectangle += ("#" * self.width + "\n")
         print(rectangle, end="")
 
