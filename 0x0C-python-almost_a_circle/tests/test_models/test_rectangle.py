@@ -77,3 +77,37 @@ class Test_Rectangle_basics(TestCase):
 	    self.assertEqual(r.area(), 6)
 	    r.height = 5
 	    self.assertEqual(r.area(), 15)
+
+    def test_update_args(self):
+        r = Rectangle(10, 10, 10, 10)
+        
+        r.update(89)
+        self.assertEqual(r.id, 89)
+        
+        r.update(89, 2)
+        self.assertEqual(r.width, 2)
+
+        r.update(89, 2, 3)
+        self.assertEqual(r.height, 3)
+
+        r.update(89, 2, 3, 4)
+        self.assertEqual(r.x, 4)
+
+        r.update(89, 2, 3, 4, 5)
+        self.assertEqual(r.y, 5)
+    
+    def test_update_kwargs(self):
+        r = Rectangle(10, 10, 10, 10)
+        
+        r.update(height=1)
+        self.assertEqual(r.height, 1)
+        
+        r.update(width=2, x=2)
+        self.assertEqual(r.width, 2)
+        self.assertEqual(r.x, 2)
+        
+        r.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(r.y, 1)
+        self.assertEqual(r.width, 2)
+        self.assertEqual(r.x, 3)
+        self.assertEqual(r.id, 89)    
