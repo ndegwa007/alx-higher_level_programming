@@ -2,32 +2,56 @@
 
 import unittest
 from models.square import Square
+from models.base import Base
 
 
 class TestSquare(unittest.TestCase):
-    def test_init(self):
-        s1 = Square(5)
-        self.assertEqual(s1.size, 5)
-        self.assertEqual(s1.x, 0)
-        self.assertEqual(s1.y, 0)
-        self.assertIsNone(s1.id:)
+    """Test cases for Square initialization."""
+    def setUp(self):
+        Base._Base__nb_objects = 0
 
-        s2 = Square(2, 2, 2, 12)
-        self.assertEqual(s2.size, 2)
-        self.assertEqual(s2.x, 2)
-        self.assertEqual(s2.y, 2)
-        self.assertEqual(s2.id, 12)
+    def test_empty(self):
+        with self.assertRaises(TypeError):
+            Square()
 
-    def test_area(self):
-        s1 = Square(5)
-        self.assertEqual(s1.area(), 25)
+    def test_too_many_args(self):
+        with self.assertRaises(TypeError):
+            Square(1, 2, 3, 4, 5)
 
-        s2 = Square(2)
-        self.assertEqual(s2.area(), 4)
+    def test_Square_only_required(self):
+        self.assertEqual(Square(2).id, 1)
+        self.assertEqual(Square(4).id, 2)
 
-    def test_str(self):
-        s1 = Square(5)
-        self.assertEqual(str(s1), "[Square] (5) 0/0 - 5")
+    def test_Square_size_x(self):
+        self.assertEqual(Square(2, 1).id, 1)
+        self.assertEqual(Square(4, 2).id, 2)
 
-        s2 = Square(2, 2, 2, 12)
-        self.assertEqual(str(s2), "[Square] (12) 2/2 - 2")
+    def test_Square_no_id(self):
+        self.assertEqual(Square(2, 1, 2).id, 1)
+        self.assertEqual(Square(4, 2, 1).id, 2)
+
+    def test_Square_with_id(self):
+        self.assertEqual(Square(2, 1, 2, 4).id, 4)
+        self.assertEqual(Square(4, 2, 1, 2).id, 2)
+
+    def test_size_get_set(self):
+        s = Square(2, 1, 2)
+        self.assertEqual(s.size, 2)
+        s.size = 42
+        self.assertEqual(s.size, 42)
+
+    def test_width_get(self):
+        s = Square(2, 1, 2)
+        self.assertEqual(s.width, 2)
+
+    def test_height_get(self):
+        s = Square(2, 1, 2)
+        self.assertEqual(s.height, 2)
+
+    def test_x_get(self):
+        s = Square(2, 1, 2)
+        self.assertEqual(s.x, 1)
+
+    def test_y_get(self):
+        s = Square(2, 1, 2)
+        self.assertEqual(s.y, 2)
