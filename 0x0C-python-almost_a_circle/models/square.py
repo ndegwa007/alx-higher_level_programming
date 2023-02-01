@@ -37,3 +37,27 @@ class Square(Rectangle):
             raise("[TypeError] width must be an integer")
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """method assigns attribute updates"""
+        if args:
+            self.id = args[0]
+            if len(args) > 1:
+                self.size = args[1]
+            if len(args) > 2:
+                self.x = args[2]
+            if len(args) > 3:
+                self.y = args[3]
+        else:
+            if "id" in kwargs:
+                self.id = kwargs['id']
+            if "size" in kwargs:
+                self.size = kwargs['size']
+            if "x" in kwargs:
+                self.x = kwargs['x']
+            if "y" in kwargs:
+                self.y = kwargs['y']
+
+    def to_dictionary(self):
+        """ returns dictionary representation of a square """
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
