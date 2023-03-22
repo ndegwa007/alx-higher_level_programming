@@ -10,8 +10,8 @@ mysql_user = sys.argv[1]
 mysql_password = sys.argv[2]
 mysql_db = sys.argv[3]
 
-#connect to the mysql server
 if __name__ == '__main__':
+    #connect to the mysql server
     db = MySQLdb.connect(host="localhost",user=mysql_user,passwd=mysql_password,db=mysql_db)
     cursor = db.cursor()
     # Execute the SQL query to fetch all states from the database
