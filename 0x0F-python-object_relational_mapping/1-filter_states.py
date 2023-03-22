@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+""" module filter """
 import MySQLdb
 import sys
+"""module list names in the database by filtering names starting with N"""
 
 if __name__ == "__main__":
     # get the mysql username, password, and database name as command-line arguments
