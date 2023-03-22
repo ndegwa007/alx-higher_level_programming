@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-""" This module lists all states from the database hbtn_0e_0_usa """
+""" module all states """
 import MySQLdb
 import sys
 
-"""a script to list all the states in a db in ascending order by id"""
+"""module script to list all the states in a db in ascending order by id
+take commandline arguments for mysql username, password and database name"""
 
-# take commandline arguments for mysql username, password and database name
-mysql_user = sys.argv[1]
-mysql_password = sys.argv[2]
-mysql_db = sys.argv[3]
 
 if __name__ == '__main__':
+
+    mysql_user, mysql_password, mysql_db = sys.argv[1:]
     # connect to the mysql server
     db = MySQLdb.connect(
             host="localhost",
