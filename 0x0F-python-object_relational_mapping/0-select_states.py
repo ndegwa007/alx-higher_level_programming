@@ -3,6 +3,11 @@
 import MySQLdb
 import sys
 
+"""
+a script to list all the states
+in a db in ascending order by id
+"""
+
 # take commandline arguments for mysql username, password and database name
 mysql_user = sys.argv[1]
 mysql_password = sys.argv[2]
