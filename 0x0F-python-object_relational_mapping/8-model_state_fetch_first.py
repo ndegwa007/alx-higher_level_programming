@@ -20,7 +20,6 @@ if __name__ == '__main__':
         if q is not None:
             print("{}: {}".format(q.id, q.name))
         else:
-            print("Nothing")
-        print("\n")
+            print("Nothing" + "\n")
 
     session.close()
