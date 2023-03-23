@@ -23,15 +23,16 @@ if __name__ == '__main__':
     # Execute the query
     query = "SELECT cities.id, cities.name FROM cities \
             INNER JOIN states ON cities.state_id = states.id \
-            WHERE states.name = %s GROUP BY \
-            cities.id, cities.name ORDER BY cities.id ASC"
+            WHERE states.name = %s \
+            GROUP BY cities.id, cities.name \
+            ORDER BY cities.id ASC"
     cur.execute(query, (sys.argv[4],))
 
     # Fetch all the rows
     rows = cur.fetchall()
 
     # Print the city names
-    city_names = set([row[1] for row in rows])
+    city_names = [row[1] for row in rows]
     print(', '.join(city_names))
 
     # Close the cursor and database connection
