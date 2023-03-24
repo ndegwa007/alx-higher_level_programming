@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""module prints state object
-with the name passed as argument
+"""module prints a new state id
 from the database hbtn_0e_6_usa"""
 
 from sqlalchemy import create_engine
