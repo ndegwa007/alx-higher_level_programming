@@ -18,5 +18,5 @@ if __name__ == "__main__":
 
     with Session() as session:
         state = session.query(State).filter(State.name.like("%a%"))
-        state.delete()
+        state.delete(synchronize_session='fetch')
         session.commit()
