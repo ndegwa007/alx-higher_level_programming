@@ -1,3 +1,3 @@
 #!/bin/bash
-#script sends a GET request to the URL, and displays body of the response
-curl -sI $1
+response=$(curl -s -w "%{http_code}" $1)
+[ "$response" == 200 ] && curl -s $1
