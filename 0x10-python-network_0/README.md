@@ -7,3 +7,6 @@ Folder with curl basics written as bash scripts
 3. Bash script that takes in a URL and displays all HTTP methods the server will accept.
 4.  Bash script that takes in a URL as an argument, sends a GET request to the URL, and displays the body of the response
 A header variable X-School-User-Id must be sent with the value 98
+5.  Bash script that takes in a URL, sends a POST request to the passed URL, and displays the body of the response
+A variable email must be sent with the value test@gmail.com
+A variable subject must be sent with the value I will always be here for PLD
