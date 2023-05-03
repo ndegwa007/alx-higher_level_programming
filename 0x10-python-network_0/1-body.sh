@@ -1,3 +1,3 @@
 #!/bin/bash
-# script takes in URL, sends a GET request to the URL and displays the body of the response
-[ $(curl -s -w "%{http_code}" $1) == "200" ] && curl -s $1
+# Sends a GET request to a URL and returns the body of the response for a 200 status code
+curl -s -o /dev/null -w "%{http_code}\n%{body}" -L $1 | awk 'BEGIN {RS="\n\n|\r\n\r\n"} ; {if ($1 == "200") print $2}'
