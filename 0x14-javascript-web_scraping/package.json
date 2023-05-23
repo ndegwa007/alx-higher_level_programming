@@ -1,0 +1,13 @@
+{
+  "name": "0x14-javascript-web_scraping",
+  "version": "1.0.0",
+  "description": "JS-Web scraping",
+  "main": "0-readme.js",
+  "type":"module",
+  "scripts": {
+     "test": "semistandard && node my-normal-tests-littered-with-semicolons.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
