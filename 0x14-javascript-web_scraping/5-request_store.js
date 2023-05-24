@@ -9,12 +9,10 @@ const file = process.argv[3];
 request(url, (err, response, body) => {
   if (err) {
     console.error(err);
-	  return;
   }
 
   if (response.statusCode !== 200) {
     console.error(response.statusCode);
-	  return;
   }
 
   fs.writeFile(file, body, 'utf-8', (err) => {
