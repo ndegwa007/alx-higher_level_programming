@@ -12,9 +12,9 @@ def find_peak(list_of_integers: [int]) -> int:
     if len(list_of_integers) == 0:
         return None
     # check for duplicates
-    for i in list_of_integers:
-        if list_of_integers.count(i) == len(list_of_integers):
-            return i
+    if list_of_integers.count(list_of_integers[0]) == \
+            len(list_of_integers):
+        return list_of_integers[0]
 
     # loop to get mid and return value in the list
     while (low <= high):
